@@ -1,0 +1,1099 @@
+/* ===================================
+   THIBAUT BIRTHDAY WEBSITE - STYLES
+   Mobile-First Responsive Design
+   =================================== */
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.6;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1e1b4b 0%, #7c3aed 50%, #db2777 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===================================
+   LOGIN SCREEN STYLES
+   =================================== */
+
+.login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e1b4b 0%, #7c3aed 50%, #db2777 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fbbf24, #f472b6, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.login-header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.input-group input {
+  padding: 0.875rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.login-btn {
+  padding: 1rem;
+  background: linear-gradient(45deg, #7c3aed, #db2777);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.5rem;
+}
+
+/* ===================================
+   STAR FIELD BACKGROUNDS
+   =================================== */
+
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.login-stars {
+  z-index: 5;
+}
+
+.main-stars {
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Constellation star animations - no movement, just brightness */
+@keyframes constellationTwinkle {
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 6px #fff);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 18px #fff);
+  }
+}
+
+@keyframes constellationGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: blur(2px) drop-shadow(0 0 10px #fff);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(4px) drop-shadow(0 0 32px #fff);
+  }
+}
+
+.constellation-star {
+  animation: constellationTwinkle 2.5s ease-in-out infinite;
+}
+
+.constellation-star-glow {
+  animation: constellationGlow 3s ease-in-out infinite;
+}
+
+.constellation-bg-star {
+  animation: constellationTwinkle 3s ease-in-out infinite;
+}
+
+/* ===================================
+   MAIN WEBSITE STYLES
+   =================================== */
+
+.main-website {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}
+
+/* Audio Controls */
+.audio-controls {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.audio-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.audio-btn.muted .audio-icon {
+  display: none;
+}
+
+.audio-btn.muted::after {
+  content: "🔇";
+  font-size: 1.2rem;
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.floating-heart,
+.floating-sparkle,
+.floating-coffee,
+.floating-star {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-heart {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-sparkle {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.floating-coffee {
+  top: 60%;
+  left: 5%;
+  animation-delay: 3s;
+}
+
+.floating-star {
+  top: 80%;
+  right: 10%;
+  animation-delay: 4.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-coffee {
+  font-size: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  background: linear-gradient(45deg, #fbbf24, #f472b6, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.3),
+      0 0 40px rgba(244, 114, 182, 0.2), 0 0 60px rgba(167, 139, 250, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(251, 191, 36, 0.6),
+      0 0 60px rgba(244, 114, 182, 0.4), 0 0 90px rgba(167, 139, 250, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+.hero-subtitle {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 300;
+  color: #f8d7da;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.birth-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.birth-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: #bfdbfe;
+}
+
+.birth-icon {
+  font-size: 1.2rem;
+}
+
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+.scroll-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.scroll-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===================================
+   CONTENT SECTIONS
+   =================================== */
+
+section {
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.content-card,
+.constellation-card,
+.love-card,
+.age-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.content-card.visible,
+.constellation-card.visible,
+.love-card.visible,
+.age-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  animation: spin 4s linear infinite;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #fbbf24;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #c084fc;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===================================
+   MOON SECTION
+   =================================== */
+
+.moon-section {
+  display: flex;
+  justify-content: center;
+}
+
+.moon-content {
+  text-align: center;
+}
+
+.moon-emoji {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: glow 3s ease-in-out infinite;
+}
+
+.moon-phase {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.moon-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.moon-stat {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #bfdbfe;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.moon-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* ===================================
+   CONSTELLATION SECTIONS
+   =================================== */
+
+.constellations-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.constellation-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.constellation-name {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: white;
+}
+
+.constellation-indicator {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.leo-color {
+  background: #fbbf24;
+  box-shadow: 0 0 15px #fbbf24;
+}
+
+.virgo-color {
+  background: #60a5fa;
+  box-shadow: 0 0 15px #60a5fa;
+}
+
+.ursa-color {
+  background: #a78bfa;
+  box-shadow: 0 0 15px #a78bfa;
+}
+
+.constellation-description {
+  font-size: 1.1rem;
+  color: #c084fc;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.constellation-map {
+  position: relative;
+  height: 20rem;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 27, 75, 0.6),
+    rgba(124, 58, 237, 0.4),
+    rgba(219, 39, 119, 0.6)
+  );
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.star-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.map-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.map-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.star-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.star-item {
+  display: flex;
+  align-items: center;
+  justify-content: between;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.star-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.star-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.star-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.star-indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.star-details h6 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.star-type {
+  font-size: 0.8rem;
+  color: #bfdbfe;
+}
+
+.star-magnitude {
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.constellation-links {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* ===================================
+   LOVE MESSAGE SECTION
+   =================================== */
+
+.love-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.love-card {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: none;
+}
+
+.love-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.love-coffee {
+  animation: pulse 2s infinite;
+}
+
+.love-heart {
+  animation: heartbeat 1.5s infinite;
+  color: #f472b6;
+}
+
+.love-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #f8d7da;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.love-message {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  line-height: 1.7;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.love-signature {
+  font-size: 1.1rem;
+  color: #f8d7da;
+  font-style: italic;
+  text-align: center;
+}
+
+@keyframes heartbeat {
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+  }
+  25%,
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+/* ===================================
+   AGE COUNTER SECTION
+   =================================== */
+
+.age-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.age-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1000px; /* Make as large as constellations and love */
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+}
+
+.age-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.age-intro {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #f8d7da;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.age-display {
+  margin-bottom: 2rem;
+}
+
+.age-number {
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 800;
+  background: linear-gradient(45deg, #fbbf24, #f472b6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.age-label {
+  font-size: 2rem;
+  color: #bfdbfe;
+}
+
+.age-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.age-detail {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.detail-number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.detail-number:nth-child(1) {
+  color: #fbbf24;
+}
+.age-details .age-detail:nth-child(2) .detail-number {
+  color: #60a5fa;
+}
+.age-details .age-detail:nth-child(3) .detail-number {
+  color: #34d399;
+}
+.age-details .age-detail:nth-child(4) .detail-number {
+  color: #f472b6;
+}
+.age-details .age-detail:nth-child(5) .detail-number {
+  color: #a78bfa;
+}
+.age-details .age-detail:nth-child(6) .detail-number {
+  color: #fbbf24;
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: #c084fc;
+}
+
+.age-outro {
+  font-size: 1.5rem;
+  color: #bfdbfe;
+}
+
+/* ===================================
+   EXTERNAL LINKS
+   =================================== */
+
+.external-links,
+.constellation-links {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.external-link,
+.constellation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(124, 58, 237, 0.2);
+  color: #c084fc;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  font-size: 0.9rem;
+}
+
+.external-link:hover,
+.constellation-link:hover {
+  background: rgba(124, 58, 237, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
+}
+
+.link-icon {
+  font-size: 1rem;
+}
+
+/* ===================================
+   TABLET STYLES (768px and up)
+   =================================== */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .login-card {
+    padding: 3rem;
+  }
+
+  .birth-details {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .moon-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .age-details {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .external-links,
+  .constellation-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .floating-heart,
+  .floating-sparkle,
+  .floating-coffee,
+  .floating-star {
+    font-size: 2rem;
+  }
+}
+
+/* ===================================
+   DESKTOP STYLES (1024px and up)
+   =================================== */
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 3rem;
+  }
+
+  section {
+    margin-bottom: 6rem;
+    padding: 3rem 0;
+  }
+
+  .content-card,
+  .constellation-card,
+  .love-card,
+  .age-card {
+    padding: 3rem;
+  }
+
+  .constellation-map {
+    height: 25rem;
+  }
+
+  .hero-icons {
+    gap: 2rem;
+  }
+
+  .hero-coffee {
+    font-size: 3rem;
+  }
+
+  .age-details {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+/* ===================================
+   LARGE DESKTOP STYLES (1440px and up)
+   =================================== */
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 4rem;
+  }
+
+  .constellation-map {
+    height: 30rem;
+  }
+}

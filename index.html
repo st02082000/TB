@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sweet Tea ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+</head>
+
+<body>
+    <!-- Login Gate -->
+    <div id="login-screen" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>✨Enter the Cosmos</h1>
+                <p>A special place for my special person❤️</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="input-group">
+                    <label for="username">The month our forever started</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">The day our forever started</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Enter</button>
+                <div id="error-message" class="error-message hidden"></div>
+            </form>
+        </div>
+        <!-- Star field for login screen -->
+        <div class="star-field login-stars"></div>
+    </div>
+
+    <!-- Main Website Content -->
+    <div id="main-content" class="main-website hidden">
+        <!-- Audio Controls -->
+        <div class="audio-controls">
+            <button id="audio-toggle" class="audio-btn" aria-label="Toggle background music">
+                <span class="audio-icon">🔊</span>
+            </button>
+            <audio id="background-audio" loop>
+                <source src="ambient-space.mp3" type="audio/mpeg">
+                <!-- Add other formats as needed -->
+                Your browser does not support audio playback.
+            </audio>
+        </div>
+
+        <!-- Floating decorative elements -->
+        <div class="floating-elements">
+            <div class="floating-heart">❤️</div>
+            <div class="floating-sparkle">✨</div>
+            <div class="floating-coffee">🍵</div>
+            <div class="floating-star">⭐</div>
+        </div>
+
+        <!-- Star field background -->
+        <div class="star-field main-stars"></div>
+
+        <div class="container">
+            <!-- Header Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-icons">
+                        <span class="hero-coffee">🎆</span>
+                        <h1 class="hero-title">Happy Birthday</h1>
+                    </div>
+
+                    <h2 class="hero-subtitle"> My Sweet Tea ✨</h2>
+
+                    <p class="hero-description">
+                        To my amazing Thibaut, this is your sky, your moment frozen in time—a reminder that some things
+                        in this vast universe are truly meant to be
+                    </p>
+
+                    <div class="birth-details">
+                        <div class="birth-item">
+                            <span class="birth-icon">📅</span>
+                            <span class="birth-text">August 2nd, 2000</span>
+                        </div>
+                        <div class="birth-item">
+                            <span class="birth-icon">📍</span>
+                            <span class="birth-text">Nîmes, France</span>
+                            <span class="birth-icon">🥐</span>
+                        </div>
+                    </div>
+
+                    <div class="scroll-indicator">
+                        <span class="scroll-icon">👁️</span>
+                        <p class="scroll-text">Scroll to explore your cosmic story</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Moon Phase Section -->
+            <section class="moon-section">
+                <div class="content-card">
+                    <div class="section-header">
+                        <span class="section-icon moon-icon">🌙</span>
+                        <h3 class="section-title">Your Birth Moon</h3>
+                    </div>
+
+                    <div class="moon-content">
+                        <div class="moon-emoji">🌒</div>
+                        <h4 class="moon-phase">Waxing Crescent</h4>
+
+                        <div class="moon-stats">
+                            <div class="moon-stat">
+                                <p class="stat-label">Illumination</p>
+                                <p class="stat-value">13%</p>
+                            </div>
+                            <div class="moon-stat">
+                                <p class="stat-label">Phase Age</p>
+                                <p class="stat-value">3.2 days</p>
+                            </div>
+                        </div>
+
+                        <p class="moon-description">
+                            A delicate silver crescent rising in the evening sky
+                        </p>
+
+                        <div class="external-links">
+                            <a href="https://stellarium-web.org/?date=2000-08-02T22:00:00&location=43.8367,4.3601&fov=80&constellation_lines=true&constellation_labels=true&constellation_art=true"
+                                target="_blank" rel="noopener noreferrer" class="external-link">
+                                <span class="link-icon">🔗</span>
+                                View Sky Aug 2, 2000 - Nîmes
+                            </a>
+                            <a href="https://www.yourmoonphase.com/collections/waxing-crescent-i-moon" target="_blank"
+                                rel="noopener noreferrer" class="external-link">
+                                <span class="link-icon">🔗</span>
+                                Waxing Crescent Info
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Constellations Section -->
+            <section class="constellations-section">
+                <div class="section-header">
+                    <span class="section-icon constellation-icon">⭐</span>
+                    <h3 class="section-title">Your Night Sky</h3>
+                    <p class="section-subtitle">The constellations that shone bright for you on August 2nd, 2000</p>
+                </div>
+
+                <!-- Leo Constellation -->
+                <div class="constellation-card" data-constellation="leo">
+                    <div class="constellation-header">
+                        <h4 class="constellation-name">Leo ♌</h4>
+                        <div class="constellation-indicator leo-color"></div>
+                    </div>
+                    <p class="constellation-description">
+                        The Lion - Your ruling constellation! Contains the bright 'Sickle' asterism
+                    </p>
+
+                    <div class="constellation-map" id="leo-map">
+                        <svg class="star-map" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Leo constellation stars and connections will be drawn by JavaScript -->
+                        </svg>
+                        <div class="map-overlay">
+                            <h5 class="map-title">Leo Constellation</h5>
+                            <p class="map-subtitle">Accurate star map with all major stars</p>
+                        </div>
+                    </div>
+
+                    <div class="star-list" id="leo-stars">
+                        <!-- Star details will be populated by JavaScript -->
+                    </div>
+
+                </div>
+
+                <!-- Virgo Constellation -->
+                <div class="constellation-card" data-constellation="virgo">
+                    <div class="constellation-header">
+                        <h4 class="constellation-name">Virgo ♍</h4>
+                        <div class="constellation-indicator virgo-color"></div>
+                    </div>
+                    <p class="constellation-description">
+                        The Maiden - Contains brilliant Spica, one of the brightest stars in the sky
+                    </p>
+
+                    <div class="constellation-map" id="virgo-map">
+                        <svg class="star-map" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Virgo constellation stars and connections will be drawn by JavaScript -->
+                        </svg>
+                        <div class="map-overlay">
+                            <h5 class="map-title">Virgo Constellation</h5>
+                            <p class="map-subtitle">Accurate star map with all major stars</p>
+                        </div>
+                    </div>
+
+                    <div class="star-list" id="virgo-stars">
+                        <!-- Star details will be populated by JavaScript -->
+                    </div>
+
+                </div>
+
+                <!-- Ursa Major Constellation -->
+                <div class="constellation-card" data-constellation="ursa-major">
+                    <div class="constellation-header">
+                        <h4 class="constellation-name">Ursa Major</h4>
+                        <div class="constellation-indicator ursa-color"></div>
+                    </div>
+                    <p class="constellation-description">
+                        The Great Bear - Contains the famous Big Dipper asterism
+                    </p>
+
+                    <div class="constellation-map" id="ursa-major-map">
+                        <svg class="star-map" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ursa Major constellation stars and connections will be drawn by JavaScript -->
+                        </svg>
+                        <div class="map-overlay">
+                            <h5 class="map-title">Ursa Major Constellation</h5>
+                            <p class="map-subtitle">Accurate star map with all major stars</p>
+                        </div>
+                    </div>
+
+                    <div class="star-list" id="ursa-major-stars">
+                        <!-- Star details will be populated by JavaScript -->
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="love-section">
+                <div class="love-card">
+                    <div class="love-icons">
+                        <span class="love-coffee">🍵</span>
+                        <span class="love-heart">❤️</span>
+                        <span class="love-coffee">🍵</span>
+                    </div>
+
+                    <h3 class="love-title">A Beautiful Miracle ✨</h3>
+
+                    <p class="love-message">
+                        Just like the stars that lit up the sky on August 2nd, 2000, you light up my whole world every
+                        single
+                        day.
+                        The cosmos aligned perfectly to bring you into existence, and I'm forever grateful that our
+                        paths crossed in this infinite universe.
+                        And in all the galaxies, through all the lifetimes, I would still find you. I love
+                        you—infinitely, cosmically, truly.
+                    </p>
+
+                    <p class="love-signature">
+                        Happy Birthday, my one and only! Here's to another year to our always and forever among the
+                        stars! 🌟💕
+                    </p>
+                </div>
+            </section>
+
+            <!-- Age Counter Section -->
+            <section class="age-section">
+                <div class="age-card">
+                    <span class="age-icon">🕐</span>
+                    <p class="age-intro">You've been brightening the world for</p>
+
+                    <div class="age-display">
+                        <div class="age-number" id="age-years">25</div>
+                        <p class="age-label">Years!</p>
+                    </div>
+
+                    <div class="age-details">
+                        <div class="age-detail">
+                            <div class="detail-number" id="age-months">0</div>
+                            <div class="detail-label">Months</div>
+                        </div>
+                        <div class="age-detail">
+                            <div class="detail-number" id="age-weeks">0</div>
+                            <div class="detail-label">Weeks</div>
+                        </div>
+                        <div class="age-detail">
+                            <div class="detail-number" id="age-days">0</div>
+                            <div class="detail-label">Days</div>
+                        </div>
+                        <div class="age-detail">
+                            <div class="detail-number" id="age-hours">0</div>
+                            <div class="detail-label">Hours</div>
+                        </div>
+                        <div class="age-detail">
+                            <div class="detail-number" id="age-minutes">0</div>
+                            <div class="detail-label">Minutes</div>
+                        </div>
+                        <div class="age-detail">
+                            <div class="detail-number" id="age-seconds">0</div>
+                            <div class="detail-label">Seconds</div>
+                        </div>
+                    </div>
+
+                    <p class="age-outro">And counting every second! 🎉</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
